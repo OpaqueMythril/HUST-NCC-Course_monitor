@@ -11,19 +11,7 @@
   - **单机极简版**：开箱即用，通过控制台或日志输出变化。
   - **Bot 联动版**：支持本地寝室/低功耗设备抓取，通过 Webhook 实时同步至云端服务器，控制 QQ 机器人向指定群组广播上新消息。
 
-## 📂 项目目录结构
 
-```
-CoursesSniffer/
-│
-├── .gitignore               
-├── course_monitor.py        # 模式 A：单机独立监测脚本（开箱即用）
-│
-└── webhook/
-    ├── .env                 # 宿舍客户端私密配置（包含 Token、Cookie 及 Webhook 密匙）
-    ├── main.py              # 模式 B：寝室侦察兵 Agent 脚本（需在本地校园网环境运行）
-    └── course_webhook.py    # 模式 B：云端 NoneBot 插件（部署于云服务器 Bot 插件目录）
-```
 
 ##  环境准备
 
@@ -54,7 +42,7 @@ pip install requests python-dotenv fastapi
 
    ```
    NCC_RAW_TOKEN=这里粘贴你获取到的Token长乱码
-   NCC_USER_COOKIE="username=U202312480; rememberMe=true; ...sidebarStatus=0"
+   NCC_USER_COOKIE="username=学号; rememberMe=true; ...sidebarStatus=0"
    ```
 
 2. 直接在终端运行主程序：
@@ -67,7 +55,7 @@ pip install requests python-dotenv fastapi
 
 ### 模式 B：Bot Webhook 联动群通知版（适合有云服务器和 NoneBot2 机器人的同学）
 
-本模式下，本地脚本作为“寝室侦察兵 Agent”保持连接内网抓取，一有新情报就利用 Webhook 跨公网跨防火墙推送到云端机器人发送至指定的 QQ 群。
+本模式下，本地脚本作为侦察兵 Agent保持连接内网抓取，一有新情报就利用 Webhook 跨公网跨防火墙推送到云端机器人发送至指定的 QQ 群。
 
 #### 1. 宿舍/本地电脑客户端部署
 
@@ -75,10 +63,10 @@ pip install requests python-dotenv fastapi
 
    ```
    NCC_RAW_TOKEN=这里粘贴你获取到的Token长乱码
-   NCC_USER_COOKIE="username=U202312480; rememberMe=true; ...sidebarStatus=0"
+   NCC_USER_COOKIE="username=学号; rememberMe=true; ...sidebarStatus=0"
    
    # 配置你的云服务器 Bot 接口地址与通信暗号
-   BOT_WEBHOOK_URL=[http://49.235.132.2:8080/report_course](http://49.235.132.2:8080/report_course)
+   BOT_WEBHOOK_URL=[http://服务器ip:8080/report_course](http://服务器ip:8080/report_course)
    BOT_WEBHOOK_KEY=HUST_SECRET_666
    ```
 
