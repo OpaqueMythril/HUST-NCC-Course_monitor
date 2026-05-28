@@ -1,0 +1,13 @@
+# 忽略根目录下和所有子文件夹（如 webhook/）下的 .env 隐私文件
+.env
+**/ .env
+
+# 忽略本地生成的课程历史快照
+course_history.json
+**/course_history.json
+
+# 忽略 IDE 配置文件和 Python 编译缓存
+.idea/
+.vscode/
+__pycache__/
+**/__pycache__/
