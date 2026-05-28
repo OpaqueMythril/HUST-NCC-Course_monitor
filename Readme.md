@@ -83,8 +83,8 @@ pip install requests python-dotenv fastapi
 2. 打开服务器 NoneBot2 项目根目录下的配置文件（`.env.dev` 或 `.env.prod`），在文件末尾追加以下两行：
 
    ```
-   course_authorized_group=108672097    # 允许通知的目标 QQ 群号
-   course_webhook_key="HUST_SECRET_666"    # 与本地 Agent 对应的通信暗号
+   course_authorized_group=    # 允许通知的目标 QQ 群号
+   course_webhook_key=""    # 与本地 Agent 对应的通信暗号
    ```
 
 3. 启动或重启你的 NoneBot 机器人实例。本地监测程序一有风吹草动，群里就会立刻收到猫娘风趣、可爱的上新催促通知！
