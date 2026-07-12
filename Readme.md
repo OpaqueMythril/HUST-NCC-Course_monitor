@@ -87,5 +87,4 @@ pip install requests python-dotenv fastapi
    course_webhook_key=""    # 与本地 Agent 对应的通信暗号
    ```
 
-3. 启动或重启你的 NoneBot 机器人实例。本地监测程序一有风吹草动，群里就会立刻收到猫娘风趣、可爱的上新催促通知！
-
+3. 启动或重启你的 NoneBot 机器人实例。
